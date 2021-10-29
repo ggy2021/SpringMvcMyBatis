@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <!-- 控制全局缓存（二级缓存）-->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- 延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。默认 false  -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 当开启时，任何方法的调用都会加载该对象的所有属性。默认 false，可通过select标签的 fetchType来覆盖-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--  Mybatis 创建具有延迟加载能力的对象所用到的代理工具，默认JAVASSIST -->
+        <!--<setting name="proxyFactory" value="CGLIB" />-->
+        <!-- STATEMENT级别的缓存，使一级缓存，只针对当前执行的这一statement有效 -->
+        <!--
+                <setting name="localCacheScope" value="STATEMENT"/>
+        -->
+        <setting name="localCacheScope" value="SESSION"/>
+    </settings>
+<!-- 将数据库连接数据抽取到属性文件中方便测试 -->
+<!-- <properties resource="/WEB-INF/classes/jdbc.properties"></properties> -->
+<!-- 别名的定义 -->
+<typeAliases>
+    <!-- 批量定义别名 ，指定包名，自动扫描包中的类，别名即为类名，首字母大小写无所谓-->
+</typeAliases>
+
+
+	
+
+<!-- 数据库连接用数据库连接池 -->
+
+<!-- <mappers>
+    通过扫描包的方式来进行批量加载映射文件
+    <package name="com.wxisme.ssm.mapper"/>
+</mappers> -->
+</configuration>
